@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Persoonlijke ruimte</title>
+    </head>
+    <body
+          style = "font-family:sans-serif;">
+        <h1
+            style = "text-align:center;">
+            Persoonlijke ruimte
+        </h1>
+        
+        
+        <canvas id="myCanvas" width="1280" height="720"
+                style="border:1px solid #white;">
+            Your browser does not support the canvas element.
+        </canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(400, 350, 350, 0, 2 * Math.PI);
+            ctx.strokeStyle = "#1E2D14";
+            ctx.stroke();
+            ctx.fillStyle = "#1E2D14";
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(400, 350, 275, 0, 2 * Math.PI);
+            ctx.strokeStyle = "#792A92";
+            ctx.stroke();
+            ctx.fillStyle = "#792A92";
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(400, 350, 200, 0, 2 * Math.PI);
+            ctx.strokeStyle = "#709B51";
+            ctx.stroke();
+            ctx.fillStyle = "#709B51";
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(400, 350, 125, 0, 2 * Math.PI);
+            ctx.strokeStyle = "#C89343";
+            ctx.stroke();
+            ctx.fillStyle = "#C89343";
+            ctx.fill();
+            
+        </script>
+    </body>
+</html>
+
