@@ -3,6 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>Persoonlijke ruimte - test</title>
+        <script>
+                function allowDrop(ev) {
+                  ev.preventDefault();
+                }
+                
+                function drag(ev) {
+                  ev.dataTransfer.setData("text", ev.target.id);
+                }
+                
+                function drop(ev) {
+                  ev.preventDefault();
+                  var data = ev.dataTransfer.getData("text");
+                  ev.target.appendChild(document.getElementById(data));
+                }
+                </script>
     </head>
     <body
           style = "font-family:sans-serif;">
@@ -13,7 +28,7 @@
         
         
         <canvas id="myCanvas" width="1280" height="720"
-                style="border:1px solid #white;">
+                style="border:1px solid #FFFFFF;">
             Your browser does not support the canvas element.
         </canvas>
         <script>
@@ -48,6 +63,41 @@
             ctx.fill();
             
         </script>
+        
+<style>
+image{
+    width:100%;
+}
+#div1{
+position: absolute;
+  top: 200px;
+  left: 800px;
+  width: 148px;
+  height: 191px;
+  border: 1px solid white;
+
+}
+#div2 {
+position: absolute;
+  top: 330px;
+  left: 333px;
+  width: 148px;
+  height: 191px;
+  border: 1px solid #C89343;
+  
+}
+
+</style>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="Girl_4.png" draggable="true" ondragstart="drag(event)" id="drag1">
+      </div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+
+
+
     </body>
 </html>
 
