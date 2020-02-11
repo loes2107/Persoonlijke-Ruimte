@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Persoonlijke ruimte - test</title>
     <style>
-        image {
-            width: 10%;
-        }
-
         .collapsible {
             background-color: #C89343;
             color: white;
@@ -49,13 +45,17 @@
 
 
         .test {
-            position: relative;
+            position: absolute;
             z-index: 9;
             background-color: #ffffff00;
             text-align: center;
             border: 1px solid #ffffff00;
             cursor: move;
-            position: absolute;
+            
+        }
+
+        .test img {
+            width: 70%;
         }
     </style>
 </head>
@@ -103,45 +103,50 @@
 
     </script>
 
-    <div id="mydiv1" class="test">
-        <img src="Girl_1.png" height="107.44" width="83.25">
+    <div id="mydiv1" class="test" style="left:10px;top:105px">
+        <img src="Girl_1.png">
     </div>
-
-    <div id="mydiv2" class="test">
-        <img src="Girl_2.png" height="107.44" width="83.25">
+    <div id="mydiv2" class="test" style="left:110px;top:100px">
+        <img src="Girl_2.png">
     </div>
-
-    <div id="mydiv3" class="test">
-        <img src="Girl_3.png" height="107.44" width="83.25">
+    <div id="mydiv3" class="test" style="left:10px;top:250px">
+        <img src="Girl_3.png">
     </div>
-
-    <div id="mydiv4" class="test">
-        <img src="Girl_7.png" height="107.44" width="83.25">
+    <div id="mydiv4" class="test" style="left:110px;top:250px">
+        <img src="Girl_7.png">
     </div>
-    <div id="mydiv5" class="test">
-        <img src="Girl_8.png" height="107.44" width="83.25">
+    <div id="mydiv5" class="test" style="left:210px;top:93px">
+        <img src="Girl_8.png">
     </div>
-    <div id="mydiv6" class="test">
-        <img src="Girl_9.png" height="107.44" width="83.25">
+    <div id="mydiv6" class="test" style="left:10px;top:400px">
+        <img src="Girl_9.png">
     </div>
-    <div id="mydiv7" class="test">
-        <img src="Boy_1.png" height="107.44" width="83.25">
+    <div id="mydiv7" class="test" style="left:110px;top:390px">
+        <img src="Boy_1.png">
     </div>
-    <div id="mydiv8" class="test">
-        <img src="Boy_2.png" height="107.44" width="83.25">
+    <div id="mydiv8" class="test" style="left:10px;top:550px">
+        <img src="Boy_2.png">
     </div>
-    <div id="mydiv9" class="test">
-        <img src="Boy_4.png" height="107.44" width="83.25">
+    <div id="mydiv9" class="test" style="left:125px;top:554px">
+        <img src="Boy_4.png">
     </div>
-    <div id="mydiv10" class="test">
-        <img src="Boy_5.png" height="107.44" width="83.25">
+    <div id="mydiv10" class="test" style="left:10px;top:700px">
+        <img src="Boy_5.png">
     </div>
-    <div id="mydiv11" class="test">
-        <img src="Boy_6.png" height="107.44" width="83.25">
+    <div id="mydiv11" class="test" style="left:245px;top:717px">
+        <img src="Boy_6.png">
     </div>
-    <div id="mydiv12" class="test">
-        <img src="Boy_7.png" height="107.44" width="83.25">
+    <div id="mydiv12" class="test" style="left:125px;top:710px">
+        <img src="Boy_7.png">
+        <!-- <form action="/action_page.php">
+            <input type="text" id="fname" name="fname"><br><br>
+          </form> -->
     </div>
+    <div id="mydiv13" class="test">
+            <textarea name="message" rows="10" cols="175"
+            style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+    </div>
+    
 
 
 
@@ -159,6 +164,7 @@
         dragElement(document.getElementById("mydiv10"));
         dragElement(document.getElementById("mydiv11"));
         dragElement(document.getElementById("mydiv12"));
+        dragElement(document.getElementById("mydiv13"));
 
         function dragElement(elmnt) {
             var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -198,6 +204,7 @@
                 /* stop moving when mouse button is released:*/
                 document.onmouseup = null;
                 document.onmousemove = null;
+                document.focus();
             }
         }
     </script>
@@ -208,15 +215,15 @@
     <div class="content">
         <form action="/action_page.php">
             Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
         </form>
@@ -225,15 +232,15 @@
     <div class="content">
         <form action="/action_page.php">
             Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
         </form>
@@ -242,15 +249,15 @@
     <div class="content">
         <form action="/action_page.php">
             Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
         </form>
@@ -259,15 +266,15 @@
     <div class="content">
         <form action="/action_page.php">
             Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
             Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="10" cols="200"
+            <textarea name="message" rows="10" cols="175"
                 style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
             <br><br>
         </form>
