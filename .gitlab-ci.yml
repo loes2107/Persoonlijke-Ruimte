@@ -48,7 +48,7 @@ step-deploy-production:
       url: https://$DYNAMIC_ENV_VAR.pimzwie.rs/
     script:
       - echo setting up env $DYNAMIC_ENV_VAR environment
-      - docker rm -f $DYNAMIC_ENV_VAR
+      - docker rm -f $DYNAMIC_ENV_VAR || true
       - docker build -t $DYNAMIC_ENV_VAR .
       - docker run --name $DYNAMIC_ENV_VAR -p 5100:80 -d -l traefik.enable=true -l traefik.http.frontend.rule=Host:$DYNAMIC_ENV_VAR.pimzwie.rs -l traefik.http.port=80 -l traefik.http.protocol=http $DYNAMIC_ENV_VAR
     when: manual
