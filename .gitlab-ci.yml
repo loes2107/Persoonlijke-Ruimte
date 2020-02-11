@@ -51,7 +51,6 @@ step-deploy-production:
       - docker rm -f $DYNAMIC_ENV_VAR || true
       - docker build -t $DYNAMIC_ENV_VAR .
       - docker run --name $DYNAMIC_ENV_VAR -p 5100:80 -d -l traefik.enable=true -l traefik.http.frontend.rule=Host:$DYNAMIC_ENV_VAR.pimzwie.rs -l traefik.http.port=80 -l traefik.http.protocol=http $DYNAMIC_ENV_VAR
-    when: manual
 
 stop_staging:
   stage: deploy
