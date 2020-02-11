@@ -1,0 +1,66 @@
+image: docker:latest
+services:
+  - docker:dind
+
+stages:
+  - test
+  - deploy
+
+step-develop:
+  stage: test
+  before_script:
+    - export DYNAMIC_ENV_VAR=develop-loes
+  only:
+    - develop
+  tags:
+    - develop
+  script:
+    - echo running tests in $DYNAMIC_ENV_VAR
+
+step-deploy-staging:
+    stage: deploy
+    before_script:
+      - export DYNAMIC_ENV_VAR=staging-loes
+    only:
+      - staging
+    tags:
+      - staging
+    environment:
+      name: staging
+      url: https://$DYNAMIC_ENV_VAR.pimzwie.rs/
+      on_stop: stop_staging
+    script:
+      - echo setting up env $DYNAMIC_ENV_VAR environment
+      - docker rm -f $DYNAMIC_ENV_VAR || true
+      - docker build -t $DYNAMIC_ENV_VAR .
+      - docker run --name $DYNAMIC_ENV_VAR -p 5150:80 -d -l traefik.enable=true -l traefik.http.frontend.rule=Host:$DYNAMIC_ENV_VAR.pimzwie.rs -l traefik.http.port=80 -l traefik.http.protocol=http $DYNAMIC_ENV_VAR
+
+step-deploy-production:
+    stage: deploy
+    before_script:
+      - export DYNAMIC_ENV_VAR=production-loes
+    only:
+      - master
+    tags:
+      - master
+    environment:
+      name: production
+      url: https://$DYNAMIC_ENV_VAR.pimzwie.rs/
+    script:
+      - echo setting up env $DYNAMIC_ENV_VAR environment
+      - docker rm -f $DYNAMIC_ENV_VAR || true
+      - docker build -t $DYNAMIC_ENV_VAR .
+      - docker run --name $DYNAMIC_ENV_VAR -p 5100:80 -d -l traefik.enable=true -l traefik.http.frontend.rule=Host:$DYNAMIC_ENV_VAR.pimzwie.rs -l traefik.http.port=80 -l traefik.http.protocol=http $DYNAMIC_ENV_VAR
+
+stop_staging:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - echo removing staging environment
+    - docker rm -f staging || true
+  when: manual
+  environment:
+    name: staging
+    action: stop
+    
