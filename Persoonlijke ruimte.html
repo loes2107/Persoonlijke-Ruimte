@@ -79,7 +79,6 @@
         #yellowNoteStyle {
             background: blueviolet;
             border: 1px blueviolet;
-            
             color:white;
         }
     </style>
@@ -95,7 +94,7 @@
         Your browser does not support the canvas element.
     </canvas>
 
-    <canvas id="newCanvas" width="300" height="150" style="position:absolute;left:1120px"></canvas>
+    <canvas id="newCanvas" width="200" height="150" style="position:absolute;left:1120px"></canvas>
     <script>
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
@@ -140,9 +139,13 @@
         font-family: 'Quicksand', sans-serif">
     </div>
 
+    <div id="textbox">
+        <img src="img/textbox.png">
+    </div>
+
     <form action="mainpage.php" method="post">
-        <h3> Vul hier een naam in! </h3>
-        <textarea id="textOfNote"></textarea>
+        <p style = "position:absolute;top:120px;left:1140px;font-family:'Quicksand', sans-serif"> Vul hier een naam in! </p>
+        <textarea id="textOfNote" style="position:absolute;top:165px;left:1140px"></textarea>
     </form>
 
     <div id="create">
