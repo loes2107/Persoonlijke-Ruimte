@@ -106,7 +106,7 @@
         }
     </style>
 </head>
-
+<div id="content1">
 <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     <h1 style="text-align:center;font-family:'Quicksand', sans-serif; font-size:45px;color:#1E2D14">
         Persoonlijke ruimte
@@ -153,8 +153,11 @@
     <div id="yellowNote" class="ui-widget-content" style="display:none;position:absolute;top:175px;left:1122px">
         <img src="img/Postit.png" style="position:relative;top:150px;left:1140px;height:72px">
         <p style="position:absolute;top:148px;left:1143px"><span id='theText1'></span></p>
+    </div>
 
-
+    <div style="position:absolute;top:475px;left:1230px;z-index:1000;border:solid white;width:130px;height:130px;background-color:white">
+        <img src="img/trashcan.png" style="position:relative;width:100%">
+    
     </div>
 
     <div id="mydiv1" class="draggable" style="left:30px;top:533px">
@@ -194,7 +197,7 @@
         <img src="img/Boy_7.png">
 
     </div>
-
+</div>
 
 
 
@@ -249,12 +252,24 @@
         });
 
 
+        function convert_HTML_TO_PDF(){
+            var doc = new jsPDF();
+            var elementHTML = $('#content1').html();
+        };
+
+        doc.fromtHTML(elementHTML, 15, 15,{
+            'width':170;
+        });
+
+        doc.save('sample-document.pdf');
+
+
 
 
 
     </script>
 
-
+<div id="questions">
     <h2 style="font-family:'Quicksand', sans-serif;position:absolute;top:920px;">Vragen</h2>
     <button class="collapsible">Intieme ruimte</button>
     <div class="content">
@@ -328,9 +343,9 @@
             <br><br>
         </form>
     </div>
+</div>
 
-
-    <button class="btn btn-info" id="downloadPDF">Download PDF</button>
+    <button style="position:absolute;top:500px;left:1000px" onclick="convert_HTML_TO_PDF">Download PDF</button>
 
 
 
@@ -351,11 +366,11 @@
         }
 
         $('#downloadPDF').click(function () {
-    domtoimage.toPng(document.getElementById('content2'))
+    domtoimage.toPng(document.getElementById('circle'))
         .then(function (blob) {
-            var pdf = new jsPDF('l', 'pt', [$('#content2').width(), $('#content2').height()]);
+            var pdf = new jsPDF('l', 'pt', [$('#circle').width(), $('#circle').height()]);
 
-            pdf.addImage(blob, 'PNG', 0, 0, $('#content2').width(), $('#content2').height());
+            pdf.addImage(blob, 'PNG', 0, 0, $('#circle').width(), $('#circle').height());
             pdf.save("test.pdf");
 
             that.options.api.optionsChanged();
