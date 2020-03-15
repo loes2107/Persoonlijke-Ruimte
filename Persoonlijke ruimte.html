@@ -57,9 +57,8 @@
 
         .draggable {
             cursor: move;
-            position: absolute;
-            left: 100px;
-            top: 100px;
+            position: relative;
+            display: inline-block;
             background-color: #ffffff00;
             border: #ffffff00;
         }
@@ -102,108 +101,205 @@
             position: absolute;
             width: 24em;
             left: -0.6em;
-            top: 5em;
+           
 
         }
     </style>
 </head>
 
 
-<div id="content1">
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h1 style="text-align:center;font-family:'Quicksand', sans-serif; font-size:45px;color:#1E2D14">
+        Persoonlijke ruimte
+    </h1>
+    <div>
+        <img id="circle" src=img/Circle.png>
+    </div>
 
-    <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-        <h1 style="text-align:center;font-family:'Quicksand', sans-serif; font-size:45px;color:#1E2D14">
-            Persoonlijke ruimte
-        </h1>
-        <div>
-            <img id="circle" src=img/Circle.png>
-        </div>
-        <img id="textbox2" src=img/Textbox2.png>
-        <p style="position:absolute;top:7em;left:5em;font-family:'Quicksand', sans-serif;text-align:center">Kies je
-            character <br> & sleep hem naar het midden</p>
-        <div>
-            <img src=img/Icon.png style="width:4.5em; position:absolute;top:29em;left:46em">
-        </div>
-        <div>
-            <input type="text" name="fname" placeholder="Typ naam hier" style="position:absolute;top:555px;left:37.5em;
-        text-align:center;background:transparent;border:transparent;color:white;font-size:18px;
-        font-family: 'Quicksand', sans-serif">
-        </div>
+<div id ="Characters" style="border:solid transparent;width:23em;height:37em">
+    <img id="textbox2" src=img/Textbox2.png>
+    <p style="position:relative;top:2em;font-family:'Quicksand', sans-serif;text-align:center">Kies je
+        character <br> & sleep hem naar het midden</p>
 
-        <div id="textbox">
-            <img src="img/textbox.png" style="width:18.3em;position:absolute;left:71em;top:6em">
-        </div>
-
-        <form action="mainpage.php" method="post">
-            <p style="position:absolute;top:8.5em;left:74em;font-family:'Quicksand', sans-serif;color:white"> Vul
-                hieronder een naam in! </p>
-            <textarea id="textOfNote" style="position:absolute;top:16.5em;left:110em;width:10em"></textarea>
-        </form>
-
-        <div id="create">
-            <button onClick="createDiv();document.getElementById('textOfNote').value = ''"
-                style="position:absolute;top:17.2em;left:122em">Enter</button>
-        </div>
-        </fieldset>
-        <br>
-
-        <div>
-            <p style="position:absolute;top:13.5em;left:73em;font-family:'Quicksand', sans-serif;color:white">Sleep de
-                post-it naar een cirkel</p>
-            <img src="img/Postit.png" style="position:absolute;width:7em;height:5em;top:250px;left:1242px">
-        </div>
-
-
-        <div id="yellowNote" class="ui-widget-content" style="display:none;position:absolute;top:175px;left:1122px">
-            <img src="img/Postit.png" style="position:relative;top:150px;left:1140px;height:5em;width:7em">
-            <p style="position:absolute;top:148px;left:1143px"><span id='theText1'></span></p>
-        </div>
-
-        <div
-            style="position:absolute;top:475px;left:1230px;z-index:1000;border:solid white;width:130px;height:130px;background-color:white">
-            <img src="img/trashcan.png" style="position:relative;width:10em">
-
-        </div>
-
-        <div id="mydiv1" class="draggable" style="left:30px;top:533px">
+    <div style="border:solid transparent;width:17em;height:28em;position:relative;left:2.3em;top:2em">
+        <div id="mydiv1" class="draggable" style="z-index:1000">
             <img src="img/Girl_1.png">
         </div>
-        <div id="mydiv2" class="draggable" style="left:135px;top:190px">
+        <div id="mydiv2" class="draggable" style="z-index:1000">
             <img src="img/Girl_2.png">
         </div>
-        <div id="mydiv3" class="draggable" style="left:30px;top:300px">
+        <div id="mydiv3" class="draggable" style="z-index:1000">
             <img src="img/Girl_3.png">
         </div>
-        <div id="mydiv4" class="draggable" style="left:130px;top:300px">
+        <div id="mydiv4" class="draggable" style="z-index:1000">
             <img src="img/Girl_7.png">
         </div>
-        <div id="mydiv5" class="draggable" style="left:235px;top:525px">
+        <div id="mydiv5" class="draggable" style="z-index:1000">
             <img src="img/Girl_8.png">
         </div>
-        <div id="mydiv6" class="draggable" style="left:30px;top:410px">
+        <div id="mydiv6" class="draggable" style="z-index:1000">
             <img src="img/Girl_9.png">
         </div>
-        <div id="mydiv7" class="draggable" style="left:125px;top:403px">
+        <div id="mydiv7" class="draggable" style="z-index:1000">
             <img src="img/Boy_1.png">
         </div>
-        <div id="mydiv8" class="draggable" style="left:230px;top:300px">
+        <div id="mydiv8" class="draggable" style="z-index:1000">
             <img src="img/Boy_2.png">
         </div>
-        <div id="mydiv9" class="draggable" style="left:225px;top:410px">
+        <div id="mydiv9" class="draggable" style="z-index:1000">
             <img src="img/Boy_4.png">
         </div>
-        <div id="mydiv10" class="draggable" style="left:30px;top:180px">
+        <div id="mydiv10" class="draggable" style="z-index:1000">
             <img src="img/Boy_5.png">
         </div>
-        <div id="mydiv11" class="draggable" style="left:230px;top:193px">
+        <div id="mydiv11" class="draggable" style="z-index:1000">
             <img src="img/Boy_6.png">
         </div>
-        <div id="mydiv12" class="draggable" style="left:125px;top:525px">
+        <div id="mydiv12" class="draggable" style="z-index:1000">
             <img src="img/Boy_7.png">
-
         </div>
+    </div>
 </div>
 
+
+    <div>
+        <img src=img/Icon.png style="width:4.5em; position:absolute;top:29em;left:46em">
+    </div>
+    <div>
+        <input type="text" name="fname" placeholder="Typ naam hier" style="position:absolute;top:555px;left:37.5em;
+        text-align:center;background:transparent;border:transparent;color:white;font-size:18px;
+        font-family: 'Quicksand', sans-serif">
+    </div>
+
+    <div id="textbox">
+        <img src="img/textbox.png" style="width:18.3em;position:absolute;left:71em;top:6em">
+    </div>
+
+    <form action="mainpage.php" method="post">
+        <p style="position:absolute;top:8.5em;left:74em;font-family:'Quicksand', sans-serif;color:white"> Vul
+            hieronder een naam in! </p>
+        <textarea id="textOfNote" style="position:absolute;top:16.5em;left:110em;width:10em"></textarea>
+    </form>
+
+    <div id="create">
+        <button onClick="createDiv();document.getElementById('textOfNote').value = ''"
+            style="position:absolute;top:17.2em;left:122em">Enter</button>
+    </div>
+    </fieldset>
+    <br>
+
+    <div>
+        <p style="position:absolute;top:13.5em;left:73em;font-family:'Quicksand', sans-serif;color:white">Sleep
+            de
+            post-it naar een cirkel</p>
+        <img src="img/Postit.png" style="position:absolute;width:7em;height:5em;top:250px;left:1242px">
+    </div>
+
+
+    <div id="yellowNote" class="ui-widget-content" style="display:none;position:absolute;top:175px;left:1122px">
+        <img src="img/Postit.png" style="position:relative;top:150px;left:1140px;height:5em;width:7em">
+        <p style="position:absolute;top:148px;left:1143px"><span id='theText1'></span></p>
+    </div>
+
+    <div
+        style="position:absolute;top:475px;left:1230px;z-index:1000;border:solid white;width:130px;height:130px;background-color:white">
+        <img src="img/trashcan.png" style="position:relative;width:10em">
+
+    </div>
+
+
+    <div id="questions">
+        <h2 style="font-family:'Quicksand', sans-serif;position:absolute;top:920px;">Vragen</h2>
+        <button class="collapsible">Intieme ruimte</button>
+        <div class="content">
+            <form action="/action_page.php">
+                <br>
+                Vraag 1: Wie zijn de personen in de cirkel?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 2: Hoe mogen deze personen je aanraken?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 3: Wat mogen deze personen over jou weten?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 4: Wat moet er zijn in contact?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+            </form>
+        </div>
+        <button class="collapsible">Persoonlijke ruimte</button>
+        <div class="content">
+            <form action="/action_page.php">
+                <br>
+                Vraag 1: Wie zijn de personen in de cirkel?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 2: Hoe mogen deze personen je aanraken?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 3: Wat mogen deze personen over jou weten?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 4: Wat moet er zijn in contact?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+            </form>
+        </div>
+        <button class="collapsible">Sociale ruimte</button>
+        <div class="content">
+            <form action="/action_page.php">
+                <br>
+                Vraag 1: Wie zijn de personen in de cirkel?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 2: Hoe mogen deze personen je aanraken?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 3: Wat mogen deze personen over jou weten?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 4: Wat moet er zijn in contact?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+            </form>
+        </div>
+        <button class="collapsible">Publieke ruimte</button>
+        <div class="content">
+            <form action="/action_page.php">
+                <br>
+                Vraag 1: Wie zijn de personen in de cirkel?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 2: Hoe mogen deze personen je aanraken?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 3: Wat mogen deze personen over jou weten?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+                Vraag 4: Wat moet er zijn in contact?<br>
+                <textarea name="message" rows="7" cols="175"
+                    style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
+                <br><br>
+            </form>
+        </div>
+    </div>
+</body>
 
 
 <script>
@@ -256,108 +352,6 @@
         }
     });
 
-
-
-
-
-</script>
-
-<div id="questions">
-    <h2 style="font-family:'Quicksand', sans-serif;position:absolute;top:920px;">Vragen</h2>
-    <button class="collapsible">Intieme ruimte</button>
-    <div class="content">
-        <form action="/action_page.php">
-            <br>
-            Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 4: Wat moet er zijn in contact?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-        </form>
-    </div>
-    <button class="collapsible">Persoonlijke ruimte</button>
-    <div class="content">
-        <form action="/action_page.php">
-            <br>
-            Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 4: Wat moet er zijn in contact?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-        </form>
-    </div>
-    <button class="collapsible">Sociale ruimte</button>
-    <div class="content">
-        <form action="/action_page.php">
-            <br>
-            Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 4: Wat moet er zijn in contact?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-        </form>
-    </div>
-    <button class="collapsible">Publieke ruimte</button>
-    <div class="content">
-        <form action="/action_page.php">
-            <br>
-            Vraag 1: Wie zijn de personen in de cirkel?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 2: Hoe mogen deze personen je aanraken?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 3: Wat mogen deze personen over jou weten?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-            Vraag 4: Wat moet er zijn in contact?<br>
-            <textarea name="message" rows="7" cols="175"
-                style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></textarea>
-            <br><br>
-        </form>
-    </div>
-</div>
-
-
-
-
-<script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
@@ -385,9 +379,5 @@
             });
     });
 </script>
-
-
-
-</body>
 
 </html>
