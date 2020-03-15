@@ -103,8 +103,8 @@
 
         }
 
-        .AllContent{
-            width:100vw;
+        .AllContent {
+            width: 100vw;
         }
     </style>
 </head>
@@ -174,44 +174,42 @@
         font-family: 'Quicksand', sans-serif">
         </div>
 
-        <div id="textbox">
-            <img src="img/textbox.png" style="width:18.3em;position:absolute;left:71em;top:6em">
+
+        <div style="position:relative;width:fit-content;left:71em;top:-37em;text-align:center">
+            <div id="textbox">
+                <img src="img/textbox.png" style="width:18.3em;position:relative">
+            </div>
+
+            <div style="position:relative;top:-14em">
+                <form action="mainpage.php" method="post">
+                    <p style="position:relative;font-family:'Quicksand', sans-serif;color:white"> Vul
+                        hieronder een naam in! </p>
+                    <textarea id="textOfNote" style="position:relative;width:10em;top:-1em"></textarea>
+                </form>
+
+                <div id="create">
+                    <button onClick="createDiv();document.getElementById('textOfNote').value = ''"
+                        style="position:relative;top:-1em">Enter</button>
+                </div>
+                </fieldset>
+                <br>
+                <p style="position:relative;font-family:'Quicksand', sans-serif;color:white;top:-2.6em">Sleep
+                    de
+                    post-it naar een cirkel</p>
+                <img src="img/Postit.png" style="position:relative;width:7em;height:5em;top:-3.7em">
+
+
+                <div id="yellowNote" class="ui-widget-content" style="display:none;">
+                    <img src="img/Postit.png" style="position:absolute;top:-60.8em;left:76.6em;height:5em;width:7em">
+                    <p style="position:absolute;top:-60.7em;left:76.8em"><span id='theText1'></span></p>
+                </div>
+            </div>
         </div>
-
-        <form action="mainpage.php" method="post">
-            <p style="position:absolute;top:8.5em;left:74em;font-family:'Quicksand', sans-serif;color:white"> Vul
-                hieronder een naam in! </p>
-            <textarea id="textOfNote" style="position:absolute;top:16.5em;left:110em;width:10em"></textarea>
-        </form>
-
-        <div id="create">
-            <button onClick="createDiv();document.getElementById('textOfNote').value = ''"
-                style="position:absolute;top:17.2em;left:122em">Enter</button>
-        </div>
-        </fieldset>
-        <br>
-
-        <div>
-            <p style="position:absolute;top:13.5em;left:73em;font-family:'Quicksand', sans-serif;color:white">Sleep
-                de
-                post-it naar een cirkel</p>
-            <img src="img/Postit.png" style="position:absolute;width:7em;height:5em;top:250px;left:1242px">
-        </div>
+            <img src="img/trashcan.png" style="width:10em;background-color:white;position:absolute;top:38em;left:77em;z-index:1000;border:solid transparent">
+        
 
 
-        <div id="yellowNote" class="ui-widget-content" style="display:none;position:absolute;top:175px;left:1122px">
-            <img src="img/Postit.png" style="position:relative;top:150px;left:1140px;height:5em;width:7em">
-            <p style="position:absolute;top:148px;left:1143px"><span id='theText1'></span></p>
-        </div>
-
-        <div
-            style="position:absolute;top:475px;left:1230px;z-index:1000;border:solid white;width:130px;height:130px;background-color:white">
-            <img src="img/trashcan.png" style="position:relative;width:10em">
-
-        </div>
-
-
-        <div id="questions" style="border:solid transparant;position:relative;top:15em">
+        <div id="questions" style="position:absolute;top:60em;width:100%">
             <h2 style="font-family:'Quicksand', sans-serif">Vragen</h2>
             <button class="collapsible">Intieme ruimte</button>
             <div class="content">
