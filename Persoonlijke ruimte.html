@@ -205,8 +205,9 @@
                 </div>
             </div>
         </div>
-            <img src="img/trashcan.png" style="width:10em;background-color:white;position:absolute;top:38em;left:77em;z-index:1000;border:solid transparent">
-        
+        <img src="img/trashcan.png"
+            style="width:10em;background-color:white;position:absolute;top:38em;left:77em;z-index:1000;border:solid transparent">
+
 
 
         <div id="questions" style="position:absolute;top:60em;width:100%">
@@ -301,6 +302,8 @@
             </div>
         </div>
     </div>
+
+    <button onclick="generatePDF()">Download as PDF</button>
 </body>
 
 
@@ -369,17 +372,17 @@
         });
     }
 
-    $('#downloadPDF').click(function () {
-        domtoimage.toPng(document.getElementById('circle'))
-            .then(function (blob) {
-                var pdf = new jsPDF('l', 'pt', [$('#circle').width(), $('#circle').height()]);
+    function generatePDF() {
+        // Choose the element that our invoice is rendered in.
+        const element = document.getElementById("invoice");
+        // Choose the element and save the PDF for our user.
+        html2pdf()
+            .set({ html2canvas: { scale: 0.8 } })
+            .from(element)
+            .save();
+    }
 
-                pdf.addImage(blob, 'PNG', 0, 0, $('#circle').width(), $('#circle').height());
-                pdf.save("test.pdf");
 
-                that.options.api.optionsChanged();
-            });
-    });
 </script>
 
 </html>
